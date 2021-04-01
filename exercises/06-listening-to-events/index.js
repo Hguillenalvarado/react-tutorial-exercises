@@ -7,9 +7,17 @@ const clickHandler = e => {
 };
 
 const Alert = props => {
-	return <button className="btn btn-success btn-lg">Click Me</button>;
+	return (
+		<button className="btn btn-success btn-lg" onClick={clickHandler}>
+			{props.text}
+		</button>
+	);
+};
+
+Alert.propTypes = {
+	text: PropTypes.string
 };
 
 // here is where the alert component is being used, you don't have to edit this part,
 // but it helps you understand what properties is the component using
-ReactDOM.render(<Alert />, document.querySelector("#myDiv"));
+ReactDOM.render(<Alert text="Click Me" />, document.querySelector("#myDiv"));
